@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="containers-wrapper">
+        <div class="container">
+            <form id="recipeForm">
+                <!-- Recipe Information -->
+                <fieldset>
+                    <legend>Recipe Information</legend>
+                    <label for="name">Recipe Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Title..." required>
+                    <label for="image">Image URL:</label>
+                    <input type="url" id="image" name="image" placeholder="Enter image URL here" required>
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description" placeholder="This creamy Mushroom..." required></textarea>
+                    <label for="origin">Origin:</label>
+                    <input type="text" id="origin" name="origin" placeholder="Country..." required>
+                </fieldset>
+
+                <!-- Ingredients and Diet -->
+                <fieldset>
+                    <legend>Ingredients and Diet</legend>
+                    <label for="ingredients">Ingredients (comma separated):</label>
+                    <input type="text" id="ingredients" name="ingredients" placeholder="Arborio rice, 1 cup Fresh mushrooms, 2 cups..." required>
+                    <label for="diet">Diet:</label>
+                    <select id="diet" name="diet">
+                        <option value="omnivore">Omnivore</option>
+                        <option value="vegetarian">Vegetarian</option>
+                        <option value="vegan">Vegan</option>
+                    </select>
+                </fieldset>
+
+                <!-- Cooking Details -->
+                <fieldset>
+                    <legend>Cooking Details</legend>
+                    <label for="serves">Serves (Number of People):</label>
+                    <input type="number" id="serves" name="serves" placeholder="Number of people it's for..." required>
+                    <label for="prep">Preparation Time (minutes):</label>
+                    <input type="number" id="prep" name="prep" required placeholder="Write a number...">
+                    <label for="cook">Cooking Time (minutes):</label>
+                    <input type="number" id="cook" name="cook" required placeholder="Write a number...">
+                </fieldset>
+
+                <!-- Additional Information -->
+                <fieldset>
+                    <legend>Additional Information</legend>
+                    <label for="allergens">Allergens (comma separated):</label>
+                    <input type="text" id="allergens" name="allergens" placeholder="Dairy (Parmesan cheese, butter)...">
+                    <label for="studentFriendly">Student Friendly:</label>
+                    <input type="checkbox" id="studentFriendly" name="studentFriendly">
+                </fieldset>
+
+                <button type="submit">Submit Recipe</button>
+            </form>
+        </div>
+        <div class="container" id="recipesDisplay">
+            <h2>Added Recipes</h2>
+        </div>
+    </div>
+    <div class="container" id="recipeRemoval">
+        <h2>Remove a Recipe</h2>
+        <input type="text" id="removeRecipeId" placeholder="Enter Recipe NR">
+        <button type="button" id="removeRecipeBtn">Remove Recipe</button>
+    </div>
+    <script type="module" src="script.js"></script>
+    <script src="formData.js"></script>
+</body>
+</html>
